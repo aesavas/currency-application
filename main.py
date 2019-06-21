@@ -1,6 +1,6 @@
-from arayuz import *
+from gui import *
 import sys
 
 app = QApplication(sys.argv)
-menu = Menu()  # type: object
+menu = Menu()
 sys.exit(app.exec_())
