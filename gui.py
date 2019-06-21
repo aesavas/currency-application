@@ -18,31 +18,31 @@ class Frame(QWidget):
         self.json_data = self.response.json()
         self.init_gui()
 
-    def init_gui(self):
+    def init_gui(self) :
         currency_units = ["TRY", "USD", "EUR", "GBP", "JPY"]
 
-        #The amount of money entered in the interface.
+        # The amount of money entered in the interface.
         self.amountLabel = QLabel("Amount : ")
         self.amount = QLineEdit()
 
-        #Converted currency
+        # Converted currency
         self.fromCurrency = QLabel("From : ")
         self.comboBox_FirstRate = QComboBox()
         self.comboBox_FirstRate.addItems(currency_units)
         self.comboBox_FirstRate.setFixedSize(100, 20)
 
-        #Which currency unit to convert
+        # Which currency unit to convert
         self.toCurrency = QLabel("To : ")
         self.comboBox_LastRate = QComboBox()
         self.comboBox_LastRate.addItems(currency_units)
         self.comboBox_LastRate.setFixedSize(100, 20)
 
-        #Button to calculate
+        # Button to calculate
         self.calculate = QPushButton("Hesapla")
         self.calculate.setFixedSize(100, 40)
         self.calculate.setIcon(QtGui.QIcon("icons\\iconForButton.png"))
 
-        #Layout plan
+        # Layout plan
         v_box = QVBoxLayout()
         h1_box = QHBoxLayout()
         h2_box = QHBoxLayout()
@@ -58,7 +58,7 @@ class Frame(QWidget):
         h2_box.addWidget(self.calculate)
         self.setLayout(v_box)
 
-        #Button function
+        # Button function
         self.calculate.clicked.connect(lambda: self.kurCevir(currency_units[self.comboBox_FirstRate.currentIndex()],
                                                              currency_units[self.comboBox_LastRate.currentIndex()],
                                                              self.amount.text()))
