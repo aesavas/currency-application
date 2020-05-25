@@ -38,7 +38,7 @@ class Frame(QWidget):
         self.comboBox_LastRate.setFixedSize(100, 20)
 
         # Button to calculate
-        self.calculate = QPushButton("Hesapla")
+        self.calculate = QPushButton("Calculate")
         self.calculate.setFixedSize(100, 40)
         self.calculate.setIcon(QtGui.QIcon("icons\\iconForButton.png"))
 
